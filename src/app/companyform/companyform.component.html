@@ -1,0 +1,151 @@
+<head>
+    <!-- Smartsupp Live Chat script -->
+
+</head>
+
+<div style="text-align:center"></div>
+
+<div *ngIf="!name; else forminfo">
+    <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+        <div class="form-container">
+            <div class="row columns">
+
+                <h1> Human Resource-Form</h1>
+
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label>Name of the company
+                            <input class="w3-input w3-animate-input" style="width:200px" type="text"
+                                formControlName="cname">
+                        </label>
+                        <div class="alert" *ngIf="!rForm.controls['cname'].valid && rForm.controls['cname'].touched">
+                            {{ titleAlert }}</div>
+                    </div>
+
+                    <div class="w3-half">
+                        <label>Authorized person Email
+                            <input class="w3-input w3-animate-input" style="width:200px" type="text"
+                                formControlName="cemail">
+                        </label>
+                        <div class="alert" *ngIf="!rForm.controls['cemail'].valid && rForm.controls['cemail'].touched">
+                            Enter mail id *requried</div>
+                    </div>
+
+                    <div class="w3-half">
+                        <label>Authorized person Phone Number
+                            <input class="w3-input w3-animate-input" style="width:200px" type="text" minlength="10"
+                                maxlength="10" formControlName="cphonenumber">
+                        </label>
+                        <div class="alert"
+                            *ngIf="!rForm.controls['cphonenumber'].valid && rForm.controls['cphonenumber'].touched">
+                            Kindly enter
+                            Mobile number </div>
+                    </div>
+
+
+                    <div class="w3-half">
+                        <label>Required Designation
+                            <input class="w3-input w3-animate-input" style="width:200px" type="text"
+                                formControlName="cdesignation">
+                        </label>
+                        <div class="alert"
+                            *ngIf="!rForm.controls['cdesignation'].valid && rForm.controls['cdesignation'].touched">
+                            Kindly enter
+                            designation </div>
+                    </div>
+
+
+
+                    <div class="w3-half">
+                        <label>Job Location
+                            <input class="w3-input w3-animate-input" style="width:200px" type="text"
+                                formControlName="clocation">
+                        </label>
+                        <div class="alert"
+                            *ngIf="!rForm.controls['clocation'].valid && rForm.controls['clocation'].touched">
+                            {{ titleAlert }}</div>
+                    </div>
+
+                    <div class="w3-half">
+                        <label>Experience required in months
+                            <input class="w3-input w3-animate-input" style="width:200px" type="text"
+                                placeholder="Months" formControlName="cexperience">
+                        </label>
+                        <div class="alert"
+                            *ngIf="!rForm.controls['cexperience'].valid && rForm.controls['cexperience'].touched">
+                            {{ titleAlert }}</div>
+                    </div>
+
+                    <div class="w3-half">
+                        <!-- <label >Your Skills -->
+                        <!-- <input class="w3-input w3-animate-input" style="width:200px" type="text"
+                                    formControlName="skill"> -->
+                        <div class="drop">
+                            <ng-multiselect-dropdown class="drop" 
+                            [placeholder]="'Enter skills Required'"
+                                [data]="dropdownList" 
+                                [settings]="dropdownSettings" 
+                                (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                        <!-- </label> -->
+                        <!-- <div class="alert" *ngIf="!rForm.controls['skill'].valid && rForm.controls['skill'].touched">
+                            {{ titleAlert }}</div> -->
+                    </div>
+
+                    <!-- <div class="w3-half">
+                        <label>Number of vacancies
+                            <input class="w3-input w3-animate-input" style="width:200px" type="text"
+                                formControlName="vacancies">
+                        </label>
+                        <div class="alert"
+                            *ngIf="!rForm.controls['vacancies'].valid && rForm.controls['vacancies'].touched">
+                            {{ titleAlert }}</div><br>
+                    </div> -->
+
+                    <div class="w3-half">
+                        <label>Number Of Vacancies
+                            <input class="w3-input w3-animate-input" style="width:200px" type="number"
+                                placeholder="in number" formControlName="cvacancy">
+                        </label>
+                        <div class="alert"
+                            *ngIf="!rForm.controls['cvacancy'].valid && rForm.controls['cvacancy'].touched">
+                            {{ titleAlert }}</div>
+                    </div>
+
+                </div>
+
+
+
+                <input type="submit" class="button expanded" value="Submit Form" >
+            </div>
+
+
+
+            <button mat-raised-button color="accent" class="b2">call<a href="tel:123-456-7890">123-456-7890</a></button>
+
+        </div>
+    </form>
+</div>
+
+
+
+<ng-template #forminfo>
+    <div class="form-container">
+        <div class="row columns">
+            <h1>{{ cname }}</h1>
+            <h4>{{cemail}}</h4>
+            <h4>{{cphonenumber}}</h4>
+
+            <h4>{{cdesignation}}</h4>
+            <h4>{{clocation}}</h4>
+            <h4>{{cskill}}</h4>
+            <h4>{{cexperience}}</h4>
+            <p>{{cvacancy}}</p>
+
+        </div>
+    </div>
+</ng-template>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,119 @@
+.body {
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 7%;
+  height: auto;
+  background-image: url("http://myzeroone.com/myzeroone/17480-business-meeting-wallpaper_24590.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -moz-background-size: cover;
+  background-attachment: absolute;
+  margin: auto;
+  border: 1px solid rgb(157, 160, 155);
+}
+
+h3 {
+  text-align: center;
+  padding-right: 14%;
+  /* padding-top: 10px; */
+  padding-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px rgb(30, 30, 31);
+}
+
+.cards {
+  width: 80%;
+  margin-top: 3%;
+  margin: auto;
+}
+
+
+
+.example-card1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.example-card2 {
+  text-align: center;
+}
+
+.card1 {
+  margin-top: 3%;
+  
+  width: 38%;
+}
+
+.card2 {
+  margin-top: 3%;
+
+  width: 38%;
+}
+
+button {
+  border-radius: 4px;
+  margin: 8px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 1rem;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 100% auto;
+  color: rgb(117, 206, 65);
+  box-shadow: 0 0 6px #eee;
+  border-radius: 6px;
+  width: 130px;
+  box-shadow: 0 1px 3px rgba(99, 2, 2, 0.12), 0 1px 2px rgba(122, 3, 3, 0.521);
+
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 6px;
+}
+button:hover {
+  box-shadow: 0 10px 20px rgba(70, 170, 4, 0.19),
+    0 6px 6px rgba(19, 184, 4, 0.23);
+  margin: 8px 10px 12px;
+}
+/* card1 */
+@media (max-width: 767px) {
+  .card1 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card1 {
+    width: 50%;
+    align-self: center;
+  }
+}
+@media (min-width: 992px) {
+  .card1 {
+    width: 40%;
+  }
+}
+/* <-- card2 --> */
+
+
+
+@media (max-width: 767px) {
+  .card2 {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .card2 {
+    width: 50%;
+    align-self: auto;
+  }
+}
+@media (min-width: 992px) {
+  .card2 {
+    width: 40%;
+  }
+}
+
+

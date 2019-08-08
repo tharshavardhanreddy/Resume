@@ -1,0 +1,98 @@
+body {
+  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+  margin: 0;
+}
+
+.form-container {
+  display: block;
+  width: 60%;
+  padding: 2em;
+  margin: 2em auto;
+  background: #fff;
+}
+
+.alert {
+  /* background: #f07971; */
+  /* padding: 3px; */
+  font-size: 0.7em;
+  color: red;
+  /* margin-bottom: 0px; */
+  /* display: inline-block; */
+  animation: 2s alertAnim forwards;
+}
+
+.drop{
+  width: 200px;;
+  height: auto;
+  position: relative;
+  padding-top: 20px;
+}
+
+
+.button {
+  margin-top: 3rem;
+}
+h1 {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-family: "Muli";
+  font-size: 2em;
+}
+
+label {
+  margin-top: 20px;
+  position: relative;
+}
+
+input {
+  position: relative;
+}
+
+button.b2 {
+  margin: auto;
+  align-content: center;
+  align-self: center;
+}
+
+/* .upload-button {
+  background-color: #4caf50;
+  color: rgb(17, 17, 16);
+  -webkit-transition-duration: 0.4s;
+  display: inline-block;
+  border: 0.5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+} */
+
+@keyframes alertAnim {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 360px) and (max-width: 640px) {
+  .form-container {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .form-container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .form-container {
+    width: 70%;
+    align-self: center;
+  }
+}
+@media (min-width: 992px) {
+  .form-container {
+    width: 60%;
+  }
+}
