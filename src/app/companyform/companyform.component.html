@@ -107,10 +107,10 @@
                     <div class="w3-half">
                         <label>Number Of Vacancies
                             <input class="w3-input w3-animate-input" style="width:200px" type="number"
-                                placeholder="in number" formControlName="cvacancy">
+                                placeholder="in number" formControlName="vacancy">
                         </label>
                         <div class="alert"
-                            *ngIf="!rForm.controls['cvacancy'].valid && rForm.controls['cvacancy'].touched">
+                            *ngIf="!rForm.controls['vacancy'].valid && rForm.controls['vacancy'].touched">
                             {{ titleAlert }}</div>
                     </div>
 
@@ -142,7 +142,7 @@
             <h4>{{clocation}}</h4>
             <h4>{{cskill}}</h4>
             <h4>{{cexperience}}</h4>
-            <p>{{cvacancy}}</p>
+            <p>{{vacancy}}</p>
 
         </div>
     </div>

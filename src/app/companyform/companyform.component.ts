@@ -19,7 +19,7 @@ export class CompanyformComponent implements OnInit {
   cname: string = '';
   cphonenumber: number;
   cdesignation: string = '';
-  cvacancy: string = '';
+  vacancy: string = '';
   cskill: string = '';
   cemail: string = '';
   cexperience: string = '';
@@ -64,7 +64,7 @@ export class CompanyformComponent implements OnInit {
       cskill: [null, Validators.required],
       cemail: [null, Validators.required],
       cexperience: [null, Validators.required],
-      cvacancy: [null, Validators.required],
+      vacancy: [null, Validators.required],
       validate: ''
     });
   }
@@ -114,12 +114,12 @@ export class CompanyformComponent implements OnInit {
     this.rForm.get('validate').valueChanges.subscribe(
       (validate) => {
         if (validate === '1') {
-          this.rForm.get('cvacancy').setValidators([Validators.required, Validators.minLength(1)]);
+          this.rForm.get('vacancy').setValidators([Validators.required, Validators.minLength(1)]);
           this.titleAlert = 'You need to specify at least 3 characters';
         } else {
-          this.rForm.get('cvacancy').setValidators(Validators.required);
+          this.rForm.get('vacancy').setValidators(Validators.required);
         }
-        this.rForm.get('cvacancy').updateValueAndValidity();
+        this.rForm.get('vacancy').updateValueAndValidity();
       }
     );
 
