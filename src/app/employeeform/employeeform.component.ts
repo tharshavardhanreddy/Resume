@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of } from 'rxjs';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Router} from '@angular/router';
+import {Router, Event} from '@angular/router';
 
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-employeeform',
@@ -188,20 +188,32 @@ export class EmployeeformComponent implements OnInit {
   }
 
   onItemSelect(item: any) {
-    console.log(item);
+    console.log(typeof(item));
     this.selectedItems.push(item);
     console.log(this.selectedItems);
   }
   OnItemDeSelect(item: any) {
+    console.log('ittem');
     console.log(item);
+    this.selectedItems = $.grep(this.selectedItems, ( element, index) => {
+return element.item_id === item.item_id;
+    }, true);
+    console.log(this.selectedItems.length);
     console.log(this.selectedItems);
+
   }
   onSelectAll(items: any) {
     console.log(items);
-    this.selectedItems.push(items);
+    this.selectedItems = items;
   }
   onDeSelectAll(items: any) {
     console.log(items);
+    this.selectedItems.splice(items);
+    this.selectedItems = $.grep(this.selectedItems, ( element, index) => {
+      return element.item_id === items.item_id;
+          }, true);
+    console.log(this.selectedItems.length);
+    console.log(this.selectedItems);
   }
 
   addPost(post) {
@@ -215,6 +227,7 @@ city : post.city,
 name : post.name,
 experience : post.experience
     };
+    console.log(JSON.stringify(details));
     // this.company = post.company;
     // this.skill = post.skill;
     // this.skillD = post.skillD;
@@ -230,10 +243,16 @@ experience : post.experience
     this.http.post('http://192.168.0.192:4500/api/jobseeker', details, { headers }).map(res => res.json()).subscribe(response => {
       console.log(response);
       if (response === 'inserted') {
-        alert("sucessfully registered");
+        alert('sucessfully registered');
         this.router.navigate(['']);
 
       }
+    });
+  }
+
+  array(arr, value) {
+    this.selectedItems.filter((ele) => {
+      return ele !== value;
     });
   }
 

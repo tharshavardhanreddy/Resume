@@ -5,10 +5,11 @@ body {
 
 .form-container {
   display: block;
-  width: 70%;
+  width: 90%;
   padding: 2em;
   margin: 2em auto;
   background: #fff;
+  /* opacity: 0.8; */
 }
 
 .alert {
@@ -29,11 +30,13 @@ h1 {
   font-weight: bold;
   font-family: "Muli";
   font-size: 2em;
+  text-align: center;
 }
 
 label {
   margin-top: 20px;
   position: relative;
+  font-size: .9em;
 }
 .drop{
   width: 200px;;
@@ -44,6 +47,7 @@ label {
 
 input {
   position: relative;
+  /* padding: 10px; */
 }
 
 button.b2 {
@@ -61,6 +65,8 @@ button.b2 {
   transition-duration: 0.4s;
   cursor: pointer;
 } */
+
+
 
 @keyframes alertAnim {
   from {

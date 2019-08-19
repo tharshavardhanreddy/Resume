@@ -37,11 +37,13 @@ h1 {
   font-weight: bold;
   font-family: "Muli";
   font-size: 2em;
+  text-align: center;
 }
 
 label {
   margin-top: 20px;
   position: relative;
+  font-size: .9em;
 }
 
 input {

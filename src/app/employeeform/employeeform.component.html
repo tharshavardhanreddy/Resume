@@ -32,7 +32,7 @@
                         </div>
     
                         <div class="w3-half">
-                            <label>Phone Number
+                            <label>Mobile Number
                                 <input class="w3-input w3-animate-input" style="width:200px" type="text" minlength="10" maxlength="10"
                                     formControlName="phonenumber">
                             </label>
@@ -83,7 +83,8 @@
                                     <ng-multiselect-dropdown class="drop"
                                     [placeholder]="'Kindly enter your skills'"
                                     [data]="dropdownList"
-                                    
+                                    (onDeSelect)="OnItemDeSelect($event)"
+                                    (onDeSelectAll)="onDeSelectAll($event)"
                                     [settings]="dropdownSettings"
                                     (onSelect)="onItemSelect($event)"
                                     (onSelectAll)="onSelectAll($event)"
