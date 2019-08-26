@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
+import {ip} from '../../config/url';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./companyform.component.css']
 })
 export class CompanyformComponent implements OnInit {
-
+ip:string;
   rForm: FormGroup;
   post: any;                     // A property for our submitted form
   clocation: string = '';
@@ -33,6 +34,7 @@ export class CompanyformComponent implements OnInit {
   private headers: Headers = new Headers();
 
   constructor(private fb: FormBuilder, public http: Http, public router: Router) {
+    this.ip = ip.url;
     this.dropdownList = [
       { item_id: 1, item_text: 'Html' },
       { item_id: 2, item_text: 'CSS' },
@@ -69,15 +71,7 @@ export class CompanyformComponent implements OnInit {
     });
   }
 
-  //   onFileChanged(event) {
-  //     this.selectedFile = event.target.files[0];
-  //     this.http.post('url', uploadData, {
-  //         reportProgress: true,
-  //         observe: 'events'
-  //     }).subscribe(event => {
-  //         console.log('uploaded successfully');
-  //     });
-  // }
+
   fileChange(eventvalue) {
     console.log(eventvalue.target.files);
     this.uploadfiles = eventvalue.target.files;
@@ -214,22 +208,12 @@ export class CompanyformComponent implements OnInit {
       skills: this.selectedItems
     };
 
-    // addPost(post) {
-    //   this.clocation = post.clocation;
-    //   this.cskill = post.cskill;
-    //   this.cdesignation = post.cdesignation;
-    //   this.cphonenumber = post.cphonenumber;
-    //   this.cemail = post.cemail;
-    //   this.cvacancy = post.cvacancy;
-    //   this.cname = post.cname;
-    //   this.cexperience = post.cexperience;
-
     const headers = new Headers();
     headers.append('content-type', 'application/json');
-    this.http.post('http://192.168.0.192:4500/api/companyjob', cdetails, { headers }).map(res => res.json()).subscribe(response => {
+    this.http.post(this.ip + '/api/companyjob', cdetails, { headers }).map(res => res.json()).subscribe(response => {
       console.log(response);
       if (response === 'inserted') {
-        alert("sucessfully registered");
+        alert('sucessfully registered');
         this.router.navigate(['']);
 
       }

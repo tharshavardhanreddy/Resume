@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Router, Event} from '@angular/router';
+import {ip} from '../../config/url';
 
 import * as $ from 'jquery';
 
@@ -17,6 +18,7 @@ export class EmployeeformComponent implements OnInit {
   rForm: FormGroup;
   post: any;                     // A property for our submitted form
   city: string = '';
+  ip: string;
   name: string = '';
   phonenumber: number;
   company: string = '';
@@ -35,6 +37,7 @@ export class EmployeeformComponent implements OnInit {
   private headers: Headers = new Headers();
 
   constructor(private fb: FormBuilder, public http: Http , public router: Router) {
+    this.ip = ip.url;
     this.dropdownList = [
       { item_id: 1, item_text: 'Html'},
       { item_id: 2, item_text: 'CSS'},
@@ -240,7 +243,7 @@ experience : post.experience
 
     const headers = new Headers();
     headers.append('content-type', 'application/json');
-    this.http.post('http://192.168.0.192:4500/api/jobseeker', details, { headers }).map(res => res.json()).subscribe(response => {
+    this.http.post(this.ip + '/api/jobseeker', details, { headers }).map(res => res.json()).subscribe(response => {
       console.log(response);
       if (response === 'inserted') {
         alert('sucessfully registered');

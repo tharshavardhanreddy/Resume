@@ -1,0 +1,136 @@
+
+
+<html lang="en">
+
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title> Registration</title>
+        </head>
+        
+        
+        <body>
+        
+                <form class="form"  #myForm="ngForm">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="well center-block">
+                          <div class="well-header">
+                            <h3 class="text-center text-info"> REGISTER HERE! </h3>
+                            <hr>
+                          </div>                         
+                  
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="form-group">
+                                <div class="input-group">
+                                 
+                                  <input type="text" placeholder="User Name" class="form-control"  name="UserName"   ngModel #UserName="ngModel"  required pattern="[a-zA-Z][a-zA-Z]+">
+                                </div>
+                                <div class="alert" *ngIf="UserName.invalid&& (UserName.dirty||UserName.touched)">
+                                    <div *ngIf="UserName.hasError('required')">
+                                      Name is required
+                                    </div>
+                                    <div *ngIf="UserName.hasError('pattern')">
+                                       Invalid Name
+                                     </div>
+                                  </div>
+                               <!-- </div> -->
+                                
+                              </div>
+                           
+                            </div>
+                          </div>
+                  
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <div class="input-group">
+                               
+                                  <input type="password" minlength="6" maxlength="8" placeholder="Password" name="Password" class="form-control" ngModel #Password="ngModel" required>
+                                </div>
+                                  <div class="alert" *ngIf="Password.invalid&& (Password.dirty||Password.touched)">
+                                      <div *ngIf="Password.hasError('required')">
+                                        Name is required
+                                      </div>
+                                      <div *ngIf="Password.hasError('minlength')">
+                                         Minimum 6 charachters is required
+                                       </div>
+                                       <div *ngIf="Password.hasError('maxlength')">
+                                          password length must be 8 charachters
+                                        </div>
+        
+                                    </div>
+                                
+                                <!-- </div> -->
+                              </div>
+                            </div>
+                          </div>
+                  
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                <div class="input-group">
+                               
+                                  <input type="text" minlength="10" maxlength="10" class="form-control" name="phonenumber" placeholder="Mobile No." ngModel #phonenumber="ngModel" required pattern="[0-9]*">
+                                </div>
+                                  <div class="alert" *ngIf="phonenumber.invalid&& (phonenumber.dirty||phonenumber.touched)">
+                                      <div *ngIf="phonenumber.hasError('required')">
+                                        PhoneNumber is required
+                                      </div>
+                                      <div *ngIf="phonenumber.hasError('pattern')">
+                                         Invalid phonenumber
+                                       </div>
+                                       <div *ngIf="phonenumber.hasError('maxlength')">
+                                          PhoneNummber must be 10 numbers
+                                        </div>
+                                        <div *ngIf="phonenumber.hasError('minlength')">
+                                            PhoneNummber must be 10 numbers
+                                          </div>
+                                    </div>
+                               
+                               
+                                <!-- </div> -->
+                              </div>
+                           
+                            </div>
+                          </div>
+                  
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                <div class="input-group">
+                                
+                                  <input type="email" class="form-control" name="mailid" placeholder="E-Mail" ngModel #mailid="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                </div>
+                                  <div class="alert" *ngIf="mailid.invalid&& (mailid.dirty||mailid.touched)">
+                                      <div *ngIf="mailid.hasError('required')">
+                                        mailid is required
+                                      </div>
+                                      <div *ngIf="mailid.hasError('pattern')">
+                                         Invalid mailid
+                                       </div>
+                                    </div>
+                                <!-- </div> -->
+                              </div>
+                             
+                          </div>
+        
+                          <div class="row widget">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                              <button class="btn btn-info btn-block" tappble (click)='jregister(myForm)'> Submit </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </form>
+                  
+        </body>    
+        </html>    
+        
+        
+        
+<router-outlet></router-outlet> 

@@ -15,22 +15,32 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { EmployeeformComponent } from './employeeform/employeeform.component';
 import { CompanyformComponent } from './companyform/companyform.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { ResjobseekerComponent } from './resjobseeker/resjobseeker.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { JobseekerloginComponent } from './jobseekerlogin/jobseekerlogin.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectpageComponent,
     EmployeeformComponent,
-    CompanyformComponent
+    CompanyformComponent,
+    ResjobseekerComponent,
+    JobseekerloginComponent
   ],
   imports: [
     NgMultiSelectDropDownModule,
     AngularMultiSelectModule,
     BrowserModule,
     LayoutModule,
+    MatToolbarModule,
     NgbModule,
     HttpModule,
     MatCheckboxModule,
+    MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,

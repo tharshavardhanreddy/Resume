@@ -13,7 +13,7 @@ export class SelectpageComponent implements OnInit {
   ngOnInit() {
   }
   employee() {
-    this.router.navigate(['/employeeform']);
+    this.router.navigate(['/jobseekerlogin']);
  }
 
  company() {

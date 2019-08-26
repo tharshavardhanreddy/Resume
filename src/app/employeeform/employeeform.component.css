@@ -9,25 +9,23 @@ body {
   padding: 2em;
   margin: 2em auto;
   background: #fff;
+  box-shadow: 0 3px 3px rgba(11, 189, 5, 0.12),
+    0 3px 3px rgba(39, 158, 2, 0.521);
 }
 
 .alert {
-  /* background: #f07971; */
-  /* padding: 3px; */
   font-size: 0.7em;
   color: red;
-  /* margin-bottom: 0px; */
-  /* display: inline-block; */
+
   animation: 2s alertAnim forwards;
 }
 
-.drop{
-  width: 200px;;
+.drop {
+  width: 200px;
   height: auto;
   position: relative;
   padding-top: 20px;
 }
-
 
 .button {
   margin-top: 3rem;
@@ -43,7 +41,7 @@ h1 {
 label {
   margin-top: 20px;
   position: relative;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 input {
@@ -55,16 +53,6 @@ button.b2 {
   align-content: center;
   align-self: center;
 }
-
-/* .upload-button {
-  background-color: #4caf50;
-  color: rgb(17, 17, 16);
-  -webkit-transition-duration: 0.4s;
-  display: inline-block;
-  border: 0.5px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-} */
 
 @keyframes alertAnim {
   from {
